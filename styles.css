@@ -78,3 +78,14 @@
  #speechContainer {
    border: 1px solid black;
  }
+
+ .site_wrapper {
+background-image: image('harmony.jpg');
+ }
+
+ .banner {
+   background-color: #FFC561;
+   opacity: 50%;
+   height: 50vh;
+   margin-top: 25vh;
+ }
