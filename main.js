@@ -15,7 +15,7 @@ $($search).on('click', function (event) {
     return;
   } else {
     var $xhr = $.ajax({
-      url: 'https://api.nal.usda.gov/ndb/search/?format=json&q='+ $value1 +'&sort=r&max=25&offset=0&ds=Standard+Reference&api_key=EByeesHLJoqSPvWqHpryJBF1RW9Mfyh3VlmabZRF',
+      url: 'https://api.nal.usda.gov/ndb/search/?format=json&q='+ $value1 +'&sort=r&max=25&offset=0&ds=Standard+Reference&api_key=' + key,
       type: 'GET',
       dataType: 'JSON',
     });//end of ajax call
@@ -43,6 +43,6 @@ $($search).on('click', function (event) {
 
 });// of submit event
 
-//$.getJSON('http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key=EByeesHLJoqSPvWqHpryJBF1RW9Mfyh3VlmabZRF&nutrients=205&nutrients=204&nutrients=208&nutrients=269')
+//$.getJSON('http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key='+ key + '&nutrients=205&nutrients=204&nutrients=208&nutrients=269')
 
 });//end of document ready
