@@ -1,5 +1,8 @@
+/*font-family: 'Cabin', sans-serif;
+font-family: 'Yanone Kaffeesatz', sans-serif;*/
+
 * {
-   font-family: Verdana, Arial, sans-serif;
+   font-family: 'Cabin', sans-serif;
  }
  a:link {
    color:#000;

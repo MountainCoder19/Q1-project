@@ -52,6 +52,34 @@ if(!('webkitSpeechRecognition' in window)) {
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 final_transcript += event.results[i][0].transcript;
+                // if(final_transcript === '') {
+                //   return;
+                // } else {
+                  var $xhr = $.ajax({
+                    url: 'https://g-usda.herokuapp.com/ndb/search/?format=json&q='+ final_transcript +'&sort=r&max=25&offset=0&ds=Standard+Reference',
+                    type: 'GET',
+                    dataType: 'JSON',
+                  });//end of ajax call
+
+                $xhr.done(function(data) {
+                  console.log(data);
+                  var arr = data.list.item;
+                  arr.forEach(function(element) {
+                    let food = {
+                      name: element.name,
+                      id: element.ndbno
+                    };
+                    foodArr.push(food);
+                  });//end of forEach method
+                });//end of done function
+
+                $xhr.fail(function() {
+                  console.log("error");
+                });//end of fail
+                $xhr.always(function() {
+                  console.log("complete");
+                });//end of always
+              // }//end of else statement
             } else {
                 interim_transcript += event.results[i][0].transcript;
             }
@@ -59,9 +87,14 @@ if(!('webkitSpeechRecognition' in window)) {
 
         final_span.innerHTML = final_transcript;
         interim_span.innerHTML = interim_transcript;
+
+
+
+
   };
 }
-
+var foodArr = [];
+console.log(foodArr);
 var $startButton = $('#start_button');
 
 function upgrade() {
@@ -78,6 +111,7 @@ function toggleStop(){
       }
       reset();
       document.getElementById('start_img').src = 'mic-slash.gif';
+
   }
 
 function toggleStartStop () {

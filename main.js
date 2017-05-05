@@ -3,8 +3,6 @@ var foodArr=[];
 
 
 
-
-
 var $search = $('#submit-btn');
 
 $($search).on('click', function (event) {
@@ -31,7 +29,6 @@ $($search).on('click', function (event) {
       foodArr.push(food);
     });//end of forEach method
   });//end of done function
-  makeList(foodArr);
 
   $xhr.fail(function() {
     console.log("error");
