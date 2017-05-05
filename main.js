@@ -15,7 +15,7 @@ $($search).on('click', function (event) {
     return;
   } else {
     var $xhr = $.ajax({
-      url: 'https://api.nal.usda.gov/ndb/search/?format=json&q='+ $value1 +'&sort=r&max=25&offset=0&ds=Standard+Reference&api_key=EByeesHLJoqSPvWqHpryJBF1RW9Mfyh3VlmabZRF',
+      url: 'https://api.nal.usda.gov/ndb/search/?format=json&q='+ $value1 +'&sort=r&max=25&offset=0&ds=Standard+Reference&api_key=' + key,
       type: 'GET',
       dataType: 'JSON',
     });//end of ajax call

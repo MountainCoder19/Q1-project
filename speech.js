@@ -3,7 +3,7 @@ if(!('webkitSpeechRecognition' in window)) {
 } else {
   var recognizing = false;
   var final_transcript = "";
-  console.log(final_transcript);
+
   var ignore_onend;
   var start_timestamp;
 
