@@ -13,6 +13,7 @@ $($search).on('click', function (event) {
     return;
   } else {
     var $xhr = $.ajax({
+
       url: 'https://g-usda.herokuapp.com/ndb/?ndbno='+ndbno+'&type=b&format=json',
       type: 'GET',
       dataType: 'JSON',
@@ -39,6 +40,7 @@ $($search).on('click', function (event) {
 }//end of else statement
 
 });// of submit event
+
 
 
 });//end of document ready
