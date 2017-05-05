@@ -3,19 +3,18 @@ var foodArr=[];
 
 
 
-
-
 var $search = $('#submit-btn');
 
 $($search).on('click', function (event) {
   event.preventDefault();
-  var $value1 = $('#submit').val();
+  var ndbno= //element.nbdno;
   console.log($value1);
-  if($($value1) === '') {
+  if(ndbno === '') {
     return;
   } else {
     var $xhr = $.ajax({
-      url: 'https://api.nal.usda.gov/ndb/search/?format=json&q='+ $value1 +'&sort=r&max=25&offset=0&ds=Standard+Reference&api_key=' + key,
+
+      url: 'https://g-usda.herokuapp.com/ndb/?ndbno='+ndbno+'&type=b&format=json',
       type: 'GET',
       dataType: 'JSON',
     });//end of ajax call
@@ -31,7 +30,6 @@ $($search).on('click', function (event) {
       foodArr.push(food);
     });//end of forEach method
   });//end of done function
-  makeList(foodArr);
 
   $xhr.fail(function() {
     console.log("error");
@@ -43,6 +41,6 @@ $($search).on('click', function (event) {
 
 });// of submit event
 
-//$.getJSON('http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key='+ key + '&nutrients=205&nutrients=204&nutrients=208&nutrients=269')
+
 
 });//end of document ready
