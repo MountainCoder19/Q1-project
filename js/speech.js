@@ -118,7 +118,7 @@ function toggleStop(){
           recognition.stop();
       }
       reset();
-      document.getElementById('start_img').src = 'mic-slash.gif';
+      document.getElementById('start_img').src = '../images/mic-slash.gif';
 
   }
 
@@ -134,7 +134,7 @@ function toggleStartStop () {
           final_span.innerHTML = '';
           interim_span.innerHTML = '';
           start_timestamp = event.timeStamp;
-          document.getElementById('start_img').src = 'mic-animate.gif';
+          document.getElementById('start_img').src = '../images/mic-animate.gif';
 
       }
 }

@@ -4,18 +4,16 @@
 <head>
   <meta charset="utf-8">
   <title>Voice Command Food Log</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Cabin|Yanone+Kaffeesatz" rel="stylesheet">
 </head>
 
 <body>
-  <h1> Some Title Here</h1>
-  <p>Some paragraph of text that describes what I want the user to do. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-    id est laborum.</p>
+  <h1> Mouth-Full</h1>
+  <p>Logging your food is crucial to any wellness program. Mouth-Full makes this process even easier. All you have to do is press the microphone button and start logging your food!</p>
 
   <button id="start_button" type="submit" onclick="toggleStartStop()">
-  <img id="start_img" src="mic.gif" alt="Start">
+  <img id="start_img" src="images/mic.gif" alt="Start">
 </button>
   <div id="speechContainer">
     <canvas id="analyser"></canvas>
@@ -33,7 +31,7 @@
   <div id="table">
   </div>
   <table id= "report">
-    
+
   </table>
 
 
@@ -42,8 +40,8 @@
 
 
 
-  <script src="speech.js" charset="utf-8" defer></script>
-  <script src="main.js" charset="utf-8" defer></script>
+  <script src="js/speech.js" charset="utf-8" defer></script>
+  <script src="js/main.js" charset="utf-8" defer></script>
 </body>
 
 </html>
