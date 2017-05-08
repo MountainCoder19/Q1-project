@@ -82,11 +82,20 @@ font-family: 'Yanone Kaffeesatz', sans-serif;*/
    border: 1px solid black;
  }
 
+body {
+background-image: url('../images/fruits and veggies.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+margin: 0;
+}
 
 
  .banner {
-   background-color: #FFC561;
-   opacity: 50%;
+   background-color: #3C5C27;
+   opacity: 0.7;
    height: 50vh;
-   margin-top: 25vh;
+   margin:25vh 0;
+   width: 100%;
+   display:block;
+
  }
