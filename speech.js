@@ -62,8 +62,10 @@ if(!('webkitSpeechRecognition' in window)) {
                   });//end of ajax call
 
                 $xhr.done(function(data) {
-                  console.log(data);
                   var arr = data.list.item;
+                  if(arr === undefined) {
+                    console.log('There are no items that match this selection');
+                  } else {
                   arr.forEach(function(element) {
                     let food = {
                       name: element.name,
@@ -71,6 +73,8 @@ if(!('webkitSpeechRecognition' in window)) {
                     };
                     foodArr.push(food);
                   });//end of forEach method
+                  createList(foodArr);
+                }//end of else statement
                 });//end of done function
 
                 $xhr.fail(function() {
@@ -94,8 +98,12 @@ if(!('webkitSpeechRecognition' in window)) {
   };
 }
 var foodArr = [];
-console.log(foodArr);
+
 var $startButton = $('#start_button');
+
+
+
+
 
 function upgrade() {
   console.log('upgrade chrome');
