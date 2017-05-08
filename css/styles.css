@@ -77,12 +77,14 @@ font-family: 'Yanone Kaffeesatz', sans-serif;*/
    border: 0;
    background-color:transparent;
    padding: 0;
+   text-align: center;  
  }
  #speechContainer {
    border: 1px solid black;
+   display:block;
  }
 
-body {
+.splash {
 background-image: url('../images/fruits and veggies.jpg');
 background-size: cover;
 background-repeat: no-repeat;
@@ -92,6 +94,7 @@ margin: 0;
 
  .banner {
    background-color: #3C5C27;
+   border: 1px solid black;
    opacity: 0.7;
    height: 50vh;
    margin:25vh 0;
@@ -101,14 +104,20 @@ margin: 0;
 
  .inner_text_box {
    box-sizing:border-box;
-   font-size: 4em;
+   font-size: 64px;
    height: 35vh;
    text-align: center;
    padding-top: 1em;
-   margin-bottom: 0;
+   margin:10px;
  }
 
 .get-started-btn {
-   padding: 10px;
-   margin-left: 47%;
+  background-color: #F0972E;
+  border-radius: 5px;
+  border: 2px solid black;
+  width: 20em;
+  margin:10px 33%;
+   padding: 15px 40px;
+   text-align: center;
+   position: relative;
  }
