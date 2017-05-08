@@ -1,3 +1,4 @@
+
 function createList (array) {
   var table = $('#table');
   array.map(function (element,index ){
@@ -31,6 +32,10 @@ $($anchor).delegate('a', 'click', function(event){
     });//end of ajax call
 
     $xhr.done(function(data) {
+        var addBtn = $('<button type = "submit" onclick = "refresh()">Next Item</button>');
+        $('#button-area').append(addBtn);
+
+
 
         var arr = data.report.food.nutrients;
         arr.forEach(function(element) {
@@ -54,20 +59,22 @@ $($anchor).delegate('a', 'click', function(event){
 
 });
 
-
 var nutrientArr = [];
 
 function nutrientReport (array) {
   $('#table').hide();
 
+
   var finalReport = $('#report');
+  var body = $("<tbody>");
   var head = $('<thead>');
   var headrow = $('<tr>');
   var headcell1 = $('<th>');
   var headcell2 = $('<th>');
-  var body = $("<tbody>");
+
   headcell1.text("Nutrient");
   headcell2.text("Amount");
+
   $(headrow).append(headcell1);
   $(headrow).append(headcell2);
   $(head).append(headrow);
@@ -86,5 +93,12 @@ function nutrientReport (array) {
     $(row).append(cell1);
     $(row).append(cell2);
     $(body).append(row);
+
   });
+
+}
+
+
+function refresh () {
+ window.location.reload();
 }

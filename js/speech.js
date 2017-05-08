@@ -56,7 +56,7 @@ if(!('webkitSpeechRecognition' in window)) {
                 //   return;
                 // } else {
                   var $xhr = $.ajax({
-                    url: 'https://g-usda.herokuapp.com/ndb/search/?format=json&q='+ final_transcript +'&sort=r&max=25&offset=0&ds=Standard+Reference',
+                    url: 'https://g-usda.herokuapp.com/ndb/search/?format=json&q='+ final_transcript +'&sort=n&max=25&offset=0&ds=Standard+Reference&sr',
                     type: 'GET',
                     dataType: 'JSON',
                   });//end of ajax call
