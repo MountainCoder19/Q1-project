@@ -5,53 +5,74 @@
   <meta charset="utf-8">
   <title>Voice Command Food Log</title>
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Cabin|Yanone+Kaffeesatz" rel="stylesheet">
 </head>
 
 <body>
   <header>
-  <h1> Mouth-Full</h1>
- </header>
+    <nav>
+      <div class="nav-wrapper light-green <darken-2></darken-2>">
+        <a href="main.html" class="brand-logo">Mouth-Full</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="nutrients.html">Reports</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
   <main>
-  <div id="speechContainer">
-    <canvas id="analyser"></canvas>
-    <span class="inputs final" id="final_span"></span>
-    <span class="inputs interim" id="interim_span"></span>
-  </div>
+    <div class="container">
+      <div class="row">
 
-  <button id="start_button" type="submit" onclick="toggleStartStop()">
+        <div class = "col s12 m8 offset -m4" id="speechContainer">
+          <canvas id="analyser"></canvas>
+          <span class="inputs final" id="final_span"></span>
+          <span class="inputs interim" id="interim_span"></span>
+        </div>
+
+      </div>
+
+
+      <button id="start_button" type="submit" onclick="toggleStartStop()" class="btn btn-floating btn-large pulse">
   <img id="start_img" src="images/mic.gif" alt="Start">
   </button>
 
 
 
-<!-- Results Area -->
-  <div id="table">
-  </div>
-  <table id= "report">
-  </table>
-  <div id="button-area">
-  </div>
+      <!-- Results Area -->
+      <div id="table">
+      </div>
+      <table id="report" class = "striped">
+      </table>
+      <div id="button-area">
+      </div>
 
-  <p>Logging your food is crucial to any wellness program. Mouth-Full makes this process even easier. All you have to do is press the microphone button and start logging your food!</p>
+      <p>Logging your food is crucial to any wellness program. Mouth-Full makes this process even easier. All you have to do is press the microphone button and start logging your food!</p>
 
-  <a href = "nutrients.html"> Click here for nutrient report</a>
+      <a href="nutrients.html"> Click here for nutrient report</a>
+    </div>
+  </main>
+  <footer class="page-footer light-green darken-2">
+         <div class="footer-copyright">
+           <div class="container">
+           © 2014 Copyright Text
+           <a class="grey-text text-lighten-4 right" href="nutrients.html">Nutrient Report</a>
+           </div>
+         </div>
+       </footer>
 
-</main>
-<footer>
-</footer>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
 
-<!--Import jQuery before materialize.js-->
-     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
-
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 
   <script src="js/speech.js" charset="utf-8" defer></script>
   <script src="js/main.js" charset="utf-8" defer></script>
