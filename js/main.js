@@ -5,13 +5,16 @@ function createList (array) {
     var row = $('<p>');
     var clickText = $('<a class="selection">');
     $(clickText).attr('id', `${element.id}`);
+
     $(clickText).text(' Name: ' + element.name);
     $(row).append(clickText);
     $(table).append(row);
   });
+
 }
 
 var $anchor = $('#table');
+
 
 $($anchor).delegate('a', 'click', function(event){
   var $choice = event.target;
@@ -32,20 +35,17 @@ $($anchor).delegate('a', 'click', function(event){
         var addBtn = $('<button type = "submit" onclick = "refresh(nutrientArr)">Next Item</button>');
         $('#button-area').append(addBtn);
 
-        var arr = data.report.food.nutrients;
-        console.log(data.report.food.name);
-        console.log(arr);
 
-        // console.log(report);
-        return arr.forEach (function(element) {
+
+        var arr = data.report.food.nutrients;
+        arr.forEach(function(element) {
           let report = {
             title: data.report.food.name,
             name: element.name,
-            facts: element.value,
-            unit: element.unit
+            facts: element.value + element.unit
           };
+
           nutrientArr.push(report);
-          console.log(nutrientArr);
         });//end of forEach method
         nutrientReport(nutrientArr);
     });//end of done function

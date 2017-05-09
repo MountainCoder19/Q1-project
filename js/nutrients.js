@@ -1,9 +1,14 @@
 
   var aggArr = "";
   var storageArr = JSON.parse(localStorage.getItem("aggArr"));
-  var aggNutrients;
-
-
+  var aggObj = {
+    calories: 0,
+    protein: 0,
+    fats: 0,
+    carbs: 0,
+    fiber: 0,
+    sugars: 0
+  };
 
 
   function refresh(array) {
