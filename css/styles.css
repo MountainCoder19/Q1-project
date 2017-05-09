@@ -101,11 +101,9 @@ margin: 0;
    display:block;
  }
 
- /*.inner_text_box {
-   box-sizing:border-box;
-
-
- }*/
+ .inner_text_box>h1 {
+text-align: center;
+ }
 
 .get-started-btn {
   background-color: #F0972E;

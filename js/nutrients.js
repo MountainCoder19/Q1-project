@@ -1,5 +1,43 @@
-var $xhr = $.getJSON('http://api.nal.usda.gov/ndb/nutrients/?format=json&api_key='+ key + '&nutrients=205&nutrients=204&nutrients=208&nutrients=269');
+var aggArr = "";
 
-    $xhr.done(function(data) {
-      console.log(data);
-    });
+
+function refresh() {
+  localStorage.setItem("aggArr", JSON.stringify(nutrientArr));
+  window.location.reload();
+  var storageArr = JSON.parse(localStorage.getItem("aggArr"));
+  console.log(storageArr);
+  totalNutrients(storageArr);
+}
+
+
+function totalNutrients(array) {
+  let total = 0;
+  let $table = $("#total-nutrients");
+  console.log($table);
+
+  array.forEach(function(element) {
+    switch (element) {
+      case index === 1:
+
+      console.log(element);
+        break;
+      case index === 2:
+      console.log(element);
+        break;
+      case index === 3:
+      console.log(element);
+        break;
+      case index === 4:
+      console.log(element);
+        break;
+      case index === 5:
+      console.log(element);
+        break;
+      case index === 6:
+      console.log(element);
+        break;
+      default:
+
+    }
+  })
+}

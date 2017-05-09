@@ -32,7 +32,7 @@ $($anchor).delegate('a', 'click', function(event){
     });//end of ajax call
 
     $xhr.done(function(data) {
-        var addBtn = $('<button type = "submit" onclick = "refresh()">Next Item</button>');
+        var addBtn = $('<button type = "submit" onclick = "refresh(nutrientArr)">Next Item</button>');
         $('#button-area').append(addBtn);
 
 
@@ -60,6 +60,7 @@ $($anchor).delegate('a', 'click', function(event){
 });
 
 var nutrientArr = [];
+
 
 function nutrientReport (array) {
   $('#table').hide();
@@ -96,9 +97,4 @@ function nutrientReport (array) {
 
   });
 
-}
-
-
-function refresh () {
- window.location.reload();
 }
