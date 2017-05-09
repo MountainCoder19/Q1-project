@@ -9,7 +9,6 @@
   function refresh(array) {
     localStorage.setItem("aggArr", JSON.stringify(array));
     window.location.reload();
-
   }
 
 

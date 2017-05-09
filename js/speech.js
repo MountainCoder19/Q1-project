@@ -39,7 +39,6 @@ if(!('webkitSpeechRecognition' in window)) {
         if(event.error === "network") {
             console.log('network error - this application requires a working internet connection', 'error');
         }
-
   };
   recognition.onresult = function (event) {
     var interim_transcript = '';
@@ -91,19 +90,11 @@ if(!('webkitSpeechRecognition' in window)) {
 
         final_span.innerHTML = final_transcript;
         interim_span.innerHTML = interim_transcript;
-
-
-
-
   };
 }
 var foodArr = [];
 
 var $startButton = $('#start_button');
-
-
-
-
 
 function upgrade() {
   console.log('upgrade chrome');
@@ -119,22 +110,19 @@ function toggleStop(){
       }
       reset();
       document.getElementById('start_img').src = '../images/mic-slash.gif';
-
   }
 
 function toggleStartStop () {
-
   if (recognizing) {
           toggleStop();
-      } else {
-          final_transcript = '';
-          recognition.lang = 'en-US';
-          recognition.start();
+  } else {
+    final_transcript = '';
+    recognition.lang = 'en-US';
+    recognition.start();
 
-          final_span.innerHTML = '';
-          interim_span.innerHTML = '';
-          start_timestamp = event.timeStamp;
-          document.getElementById('start_img').src = '../images/mic-animate.gif';
-
-      }
+    final_span.innerHTML = '';
+    interim_span.innerHTML = '';
+    start_timestamp = event.timeStamp;
+    document.getElementById('start_img').src = '../images/mic-animate.gif';
+  }
 }
