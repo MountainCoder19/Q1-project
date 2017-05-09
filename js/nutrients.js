@@ -11,20 +11,21 @@
 
 
   function totalNutrients(array) {
-    let total = 0;
+
     let $total = $('#totalNutrients').children('tbody');
     // var $identifier = $($total).children('tr').children('td').next();
     // console.log($($identifier).attr('id'));
 
     array.forEach(function(element, index) {
+      let total = 0;
       var $cell = $($total).children('tr').children('#'+`${index}`)[0];
       var identify = $($cell).attr('id');
-      console.log(index);
-      console.log(identify);
 
       if(index == identify) {
-        var value = parseInt(element.facts);
-        
+        total += parseInt(element.facts);
+        var unit = $($cell).html();
+        $($cell).html(total + unit);
+
       }
 
       // switch (index) {
