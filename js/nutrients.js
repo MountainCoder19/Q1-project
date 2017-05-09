@@ -1,10 +1,13 @@
 
   var aggArr = "";
   var storageArr = JSON.parse(localStorage.getItem("aggArr"));
-  var aggNutrients =
+  var aggNutrients;
 
-  function refresh() {
-    localStorage.setItem("aggArr", JSON.stringify(nutrientArr));
+
+
+
+  function refresh(array) {
+    localStorage.setItem("aggArr", JSON.stringify(array));
     window.location.reload();
 
   }
