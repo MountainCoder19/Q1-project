@@ -1,21 +1,10 @@
 
 function createList (array) {
-  var table = $('#table');
-  array.map(function (element,index ){
-    var row = $('<p>');
-    var clickText = $('<a class="selection">');
-    $(clickText).attr('id', `${element.id}`);
-
-    $(clickText).text(' Name: ' + element.name);
-    $(row).append(clickText);
-    $(table).append(row);
-  });
-
+    createFoodList(array);
+    $('#table').show();
 }
 
 var $anchor = $('#table');
-
-
 $($anchor).delegate('a', 'click', function(event){
   var $choice = event.target;
 
@@ -32,22 +21,22 @@ $($anchor).delegate('a', 'click', function(event){
     });//end of ajax call
 
     $xhr.done(function(data) {
-        var addBtn = $('<button type = "submit" onclick = "refresh(nutrientArr)">Next Item</button>');
-        $('#button-area').append(addBtn);
-
-
+        // var addBtn = $('<button type = "submit" onclick = "refresh(nutrientArr)">Next Item</button>');
+        // $('#button-area').append(addBtn);
 
         var arr = data.report.food.nutrients;
         arr.forEach(function(element) {
-          let report = {
+          let reportObj = {
             title: data.report.food.name,
             name: element.name,
-            facts: element.value + element.unit
+            facts: element.value,
+            units: element.unit
           };
 
-          nutrientArr.push(report);
+          nutrientArr.push(reportObj);
         });//end of forEach method
         nutrientReport(nutrientArr);
+        // localStorage.setItem("aggArr", JSON.stringify(nutrientArr));
     });//end of done function
 
     $xhr.fail(function() {
@@ -66,7 +55,6 @@ var nutrientArr = [];
 function nutrientReport (array) {
   $('#table').hide();
 
-
   var finalReport = $('#report');
   var body = $("<tbody>");
   var head = $('<thead>');
@@ -83,7 +71,6 @@ function nutrientReport (array) {
   $(finalReport).append(head);
   $(finalReport).append(body);
 
-
   array.map(function (element,index ){
   var row = $('<tr>');
   var cell1 = $("<td>");
@@ -97,5 +84,17 @@ function nutrientReport (array) {
     $(body).append(row);
 
   });
+  $('#report').show();
+}
 
+function createFoodList (array) {
+  array.map(function (element,index ){
+    var row = $('<p>');
+    var clickText = $('<a class="selection">');
+    $(clickText).attr('id', `${element.id}`);
+
+    $(clickText).text(' Name: ' + element.name);
+    $(row).append(clickText);
+    $(table).append(row);
+  });
 }
