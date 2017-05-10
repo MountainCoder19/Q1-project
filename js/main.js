@@ -21,8 +21,8 @@ $($anchor).delegate('a', 'click', function(event){
     });//end of ajax call
 
     $xhr.done(function(data) {
-        // var addBtn = $('<button type = "submit" onclick = "refresh(nutrientArr)">Next Item</button>');
-        // $('#button-area').append(addBtn);
+        var addBtn = $('<button type = "submit" onclick = "refresh(nutrientArr)">Next Item</button>');
+        $('#button-area').append(addBtn);
 
         var arr = data.report.food.nutrients;
         arr.forEach(function(element) {
@@ -36,7 +36,6 @@ $($anchor).delegate('a', 'click', function(event){
           nutrientArr.push(reportObj);
         });//end of forEach method
         nutrientReport(nutrientArr);
-        // localStorage.setItem("aggArr", JSON.stringify(nutrientArr));
     });//end of done function
 
     $xhr.fail(function() {
