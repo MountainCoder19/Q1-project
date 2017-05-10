@@ -1,18 +1,8 @@
-  //
   var aggArr = '';
   var storageArr = JSON.parse(localStorage.getItem("aggArr"));
   var everyItemArray = [];
-  //
 
-  function refresh(array) {
-    localStorage.setItem('aggArr', JSON.stringify(array));
-    // $('#report').hide();
-    window.location.reload();
-  }
-  //
   function totalNutrients(array) {
-    var totals = JSON.parse(localStorage.getItem("everyItemArray"));
-
     let $total = $('#totalNutrients').children('tbody');
 
     array.forEach(function(element, index) {
@@ -38,10 +28,12 @@
           // }//end of else statement
         }// end of if statement
     });//end of forEach method
-    // localStorage.setItem("storeAggArr", JSON.stringify(aggObj));
-    console.log(everyItemArray);
-
-    localStorage.setItem('everyItemArray', JSON.stringify(everyItemArray));
+    // localStorage.setItem('everyItemArray', JSON.stringify(everyItemArray));
   }//end of totalNutrients Function
 
+  function refresh(array) {
+    localStorage.setItem('aggArr', JSON.stringify(array));
+    everyItemArray = JSON.parse(localStorage.getItem("everyItemArray"));
+    window.location.reload();
+  }
   totalNutrients(storageArr);
