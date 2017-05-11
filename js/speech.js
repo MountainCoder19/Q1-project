@@ -50,6 +50,7 @@ if(!('webkitSpeechRecognition' in window)) {
         }
         for (var i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
+              toggleStop();
                 final_transcript += event.results[i][0].transcript;
                 // if(final_transcript === '') {
                 //   return;
@@ -102,6 +103,7 @@ function upgrade() {
 }
 
 function reset () {
+  console.log('poop');
   recognizing = false;
   final_span.innerHTML = '';
 
