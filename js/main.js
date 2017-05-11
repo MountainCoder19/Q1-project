@@ -52,7 +52,7 @@ $($anchor).delegate('a', 'click', function(event){
             facts: element.value,
             units: element.unit
           };
-          reportObj.name = element.name.replace(/\s+/g, '-');
+          reportObj.name = element.name.replace(/\W+/g, "-");
 
           nutrientArr.push(reportObj);
 

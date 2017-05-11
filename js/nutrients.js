@@ -7,29 +7,35 @@ var storageInfo = JSON.parse(localStorage.allNutrients);
     console.log(storageInfo);
 
     for(let key in object) {
-      console.log(key);
+      // console.log(key);
       let $cell = $($total).children('tr').children('#'+`${key}`)[0];
-      console.log($cell);
+      // console.log($cell);
       // let identify = $($cell).attr('id');
 
       switch (key) {
         case 'Energy':
-        $($cell).html(object[key]);
+        $($cell).html(object[key].facts + object[key].units);
+        console.log(key);
         break;
         case 'Protein':
-        $($cell).html(object[key]);
+        $($cell).html(object[key].facts + object[key].units);
+        console.log(key);
         break;
-        case 'Total-lipid-(fat)':
-        $($cell).html(object[key]);
+        case 'Total-lipid-fat-':
+        $($cell).html(object[key].facts + object[key].units);
+        console.log(key);
         break;
-        case 'Carbohydrate,-by-difference':
-        $($cell).html(object[key]);
+        case 'Carbohydrate-by-difference':
+        $($cell).html(object[key].facts + object[key].units);
+        console.log(key);
         break;
-        case 'Fiber,-total-dietary':
-        $($cell).html(object[key]);
+        case 'Fiber-total-dietary':
+        $($cell).html(object[key].facts + object[key].units);
+        console.log(key);
         break;
-        case 'Sugars,-total':
-        $($cell).html(object[key]);
+        case 'Sugars-total':
+        $($cell).html(object[key].facts + object[key].units);
+        console.log(key);
         break;
         default:
 
