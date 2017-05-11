@@ -117,8 +117,11 @@ margin: 0;
    text-align: center;
  }
 .inner_text_box {
-  margin-left: 34%;
-  margin-right: 34%;
+  margin-left: 33%;
+  margin-right: 30%;
+}
+h1 {
+  font-family: 'Permanent Marker', cursive;
 }
 
 .get-started-btn {
@@ -136,13 +139,15 @@ margin: 0;
    color: white;
  }
 
-#pie-chart {
-  padding-left: 10%;
-  margin-top: 6vh;
+.carrot {
+  width:auto;
+  height:auto;
+
 }
 
 @media (max-width:600px) {
 #container, .inner_text_box {
   margin:0;
+  .
 }
 }

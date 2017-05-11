@@ -66,7 +66,6 @@ if(!('webkitSpeechRecognition' in window)) {
                   if(arr === undefined) {
                     console.log('There are no items that match this selection');
                   } else {
-                    console.log(arr);
                   arr.forEach(function(element) {
                     let food = {
                       name: element.name,

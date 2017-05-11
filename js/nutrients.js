@@ -1,8 +1,7 @@
-$(".button-collapse").sideNav();
-$(".dropdown-button").dropdown();
 
 
-var storageInfo = JSON.parse(localStorage.allNutrients);
+var storageInfo =
+JSON.parse(localStorage.allNutrients);
 
 var pieArr = [['Nutrient','gram']];
   function makePieChart (object) {
@@ -26,7 +25,9 @@ var pieArr = [['Nutrient','gram']];
 
     let options = {
       title: "Diet Breakdown",
-      backgroundColor: "white"
+      backgroundColor: "white",
+      width: 700,
+      height: 700
     };
 
     let chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
@@ -46,48 +47,28 @@ var pieArr = [['Nutrient','gram']];
       switch (key) {
         case 'Energy':
         $($cell).html(object[key].facts + object[key].units);
-
         break;
         case 'Protein':
         $($cell).html(object[key].facts + object[key].units);
-
         break;
         case 'Total-lipid-fat-':
         $($cell).html(object[key].facts + object[key].units);
-
         break;
         case 'Carbohydrate-by-difference':
         $($cell).html(object[key].facts + object[key].units);
-
         break;
         case 'Fiber-total-dietary':
         $($cell).html(object[key].facts + object[key].units);
-
         break;
         case 'Sugars-total':
         $($cell).html(object[key].facts + object[key].units);
-
+        break;
+        case 'Sodium-Na':
+        $($cell).html(object[key].facts + object[key].units);
         break;
         default:
 
       }
-      //
-      //   if(index == identify) {
-      //     let value = parseInt(element.facts);
-      //     var unit = $($cell).html();
-      //     if(everyItemArray.length === 0){
-      //     everyItemArray.push(value.toString());
-      //     $($cell).html(value + element.units);
-      //     } else {
-      //      for(var i = 0; i < everyItemArray.length; i++) {
-      //        if (index == i) {
-      //          var arrayValue = parseInt(everyItemArray[i]);
-      //          arrayValue += value;
-      //          $($cell).html(everyItemArray[i] + element.units);
-      //        }//end of if statement
-        //    }//end of for loop
-        //   }//end of else statement
-        // }// end of if statement
     }//end of forEach method
   }//end of totalNutrients Function
 
@@ -100,6 +81,7 @@ var pieArr = [['Nutrient','gram']];
     $('#table').empty();
     $('#start_button').show();
     $('#speechContainer').show();
+    $('.paragraph-main').show();
     reset();
   // window.location.reload();
   }

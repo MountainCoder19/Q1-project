@@ -11,13 +11,15 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <link href="https://fonts.googleapis.com/css?family=Cabin|Yanone+Kaffeesatz" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script src="https://use.fontawesome.com/ce28e66cfe.js"></script>
 </head>
 
 <body>
   <header>
-    <nav>
-      <div class="nav-wrapper light-green darken-2">
+    <nav class= " light-green darken-2">
+      <div class="nav-wrapper container light-green darken-2">
         <a href="main.html" class="brand-logo">Mouth-Full</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -35,44 +37,57 @@
   </header>
   <div class="container">
     <div class="row">
-      <div class="col s12 m6">
-        <table id="totalNutrients">
+      <div class="col s12 m6" style="margin-top:10%;">
+        <table class="striped" id="totalNutrients">
           <thead>
             <tr>
               <th>Nutrient</th>
               <th>Amount</th>
+              <th>Recommended</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Calories</td>
               <td id="Energy"></td>
+              <td>2000 kcal</td>
             </tr>
             <tr>
               <td>Protein</td>
               <td id="Protein"></td>
+              <td>50 g</td>
             </tr>
             <tr>
               <td>Lipids(Fat)</td>
               <td id="Total-lipid-fat-"></td>
+              <td>65 g</td>
             </tr>
             <tr>
               <td>Carbohydrates</td>
               <td id="Carbohydrate-by-difference"></td>
+              <td>300 g</td>
             </tr>
             <tr>
               <td>Fiber</td>
               <td id="Fiber-total-dietary"></td>
+              <td>25 g</td>
             </tr>
             <tr>
               <td>Sugars</td>
               <td id="Sugars-total"></td>
+              <td>(Men)36 g (Women)25 g</td>
+            </tr>
+            <tr>
+              <td>Sodium</td>
+              <td id="Sodium-Na"></td>
+              <td>2,300 mg</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class = "col s12 m6">
-        <div id ="pie-chart"></div>
+      <div class = "col s12 m6 pieContainer">
+        <div id ="pie-chart" style = "padding-left: 10%;
+        margin-top: 2vh;"></div>
       </div>
     </div>  <!---end of row------->
   </div>  <!---end of container --->

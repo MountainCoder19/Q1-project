@@ -1,12 +1,16 @@
 
 
 var allNutrients = {};
+var thursDate = new Date(2017,5,11);
 var lastSaved = new Date(localStorage.saveDate);
-var curentDate = new Date();
+var currentDate = new Date();
+//86,400,000 is the amt of milliseconds in one day
 // Take last saved and figure out if it was today.
 if (localStorage.allNutrients) {
   allNutrients = JSON.parse(localStorage.allNutrients);
+
 }
+// Make function that counts dates.
 
 //take out spaces and replace with dashes for modalId
 String.prototype.replaceAll = function(search, replacement) {
@@ -59,6 +63,7 @@ $($anchor).delegate('a', 'click', function(event){
           nutrientArr.push(reportObj);
 
         });//end of forEach method
+        $('.paragraph-main').hide();
         storeNutrients();
         nutrientReport(nutrientArr);
     });//end of done function
@@ -76,7 +81,6 @@ $($anchor).delegate('a', 'click', function(event){
 var nutrientArr = [];
 
 function storeNutrients() {
-  console.log(nutrientArr);
   for (let n of nutrientArr) {
     if (allNutrients[n.name]) {
       allNutrients[n.name].facts = allNutrients[n.name].facts + parseInt(n.facts);
@@ -113,16 +117,18 @@ function nutrientReport (array) {
   $(finalReport).append(body);
 
   array.map(function (element,index ){
-  var row = $('<tr>');
-  var cell1 = $("<td>");
-  var cell2 = $("<td>");
+    if(element.name === 'Protein' || element.name === 'Carbohydrate-by-difference'|| element.name === 'Total-lipid-fat-' ||element.name === 'Fiber-total-dietary' ||element.name === 'Sugars-total'||element.name === 'Sodium-Na') {
+      var row = $('<tr>');
+      var cell1 = $("<td>");
+      var cell2 = $("<td>");
 
-  $(cell1).text(element.name);
-  $(cell2).text(element.facts);
+      $(cell1).text(element.name);
+      $(cell2).text(element.facts);
 
-    $(row).append(cell1);
-    $(row).append(cell2);
-    $(body).append(row);
+      $(row).append(cell1);
+      $(row).append(cell2);
+      $(body).append(row);
+    }
 
   });
   $('#report').show();
