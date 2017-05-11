@@ -1,5 +1,19 @@
+var allNutrients = {};
+var lastSaved = new Date(localStorage.saveDate);
+var curentDate = new Date();
+// Take last saved and figure out if it was today.
+if (localStorage.allNutrients) {
+  allNutrients = JSON.parse(localStorage.allNutrients);
+}
+
+//take out spaces and replace with dashes for modalId
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
 
 function createList (array) {
+
     createFoodList(array);
     $('#table').show();
 }
@@ -21,8 +35,14 @@ $($anchor).delegate('a', 'click', function(event){
     });//end of ajax call
 
     $xhr.done(function(data) {
-        var addBtn = $('<button type = "submit" onclick = "refresh(nutrientArr)">Next Item</button>');
-        $('#button-area').append(addBtn);
+        nutrientArr = [];
+        let $addBtn = $('<button type = "submit" id = "nextItem" onclick = "refresh(nutrientArr)">Next Item</button>');
+        // let $addBtn = $('<button type="submit">Next Item</button>');
+        // $addBtn.on('click', function (e) {
+        //   console.log($addBtn);
+        //   reset(nutrientArr);
+        // });
+        $('#button-area').append($addBtn);
 
         var arr = data.report.food.nutrients;
         arr.forEach(function(element) {
@@ -32,9 +52,12 @@ $($anchor).delegate('a', 'click', function(event){
             facts: element.value,
             units: element.unit
           };
+          reportObj.name = element.name.replace(/\s+/g, '-');
 
           nutrientArr.push(reportObj);
+
         });//end of forEach method
+        storeNutrients();
         nutrientReport(nutrientArr);
     });//end of done function
 
@@ -50,11 +73,28 @@ $($anchor).delegate('a', 'click', function(event){
 
 var nutrientArr = [];
 
+function storeNutrients() {
+  console.log(nutrientArr);
+  for (let n of nutrientArr) {
+    if (allNutrients[n.name]) {
+      allNutrients[n.name].facts = allNutrients[n.name].facts + parseInt(n.facts);
+    } else {
+      allNutrients[n.name] = {
+        facts: parseInt(n.facts),
+        units: n.units
+      };
+    }
+  }
+  localStorage.allNutrients = JSON.stringify(allNutrients);
+  localStorage.saveDate = Date();
+}
 
 function nutrientReport (array) {
   $('#table').hide();
 
+
   var finalReport = $('#report');
+  finalReport.empty();
   var body = $("<tbody>");
   var head = $('<thead>');
   var headrow = $('<tr>');
@@ -67,7 +107,7 @@ function nutrientReport (array) {
   $(headrow).append(headcell1);
   $(headrow).append(headcell2);
   $(head).append(headrow);
-  $(finalReport).append(head);
+  $(finalReport).append();
   $(finalReport).append(body);
 
   array.map(function (element,index ){
@@ -96,4 +136,6 @@ function createFoodList (array) {
     $(row).append(clickText);
     $(table).append(row);
   });
+  $('#start_button').hide();
+  $('#speechContainer').hide();
 }

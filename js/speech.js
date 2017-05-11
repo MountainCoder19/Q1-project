@@ -61,6 +61,7 @@ if(!('webkitSpeechRecognition' in window)) {
                   });//end of ajax call
 
                 $xhr.done(function(data) {
+                  foodArr = [];
                   var arr = data.list.item;
                   if(arr === undefined) {
                     console.log('There are no items that match this selection');
@@ -101,7 +102,10 @@ function upgrade() {
 }
 
 function reset () {
+  console.log('resetting');
   recognizing = false;
+  final_span.innerHTML = '';
+
 }
 
 function toggleStop(){
