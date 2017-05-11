@@ -1,3 +1,5 @@
+
+
 var allNutrients = {};
 var lastSaved = new Date(localStorage.saveDate);
 var curentDate = new Date();

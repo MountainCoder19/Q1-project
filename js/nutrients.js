@@ -1,10 +1,41 @@
+$(".button-collapse").sideNav();
+$(".dropdown-button").dropdown();
+
+
 var storageInfo = JSON.parse(localStorage.allNutrients);
+
+var pieArr = [['Nutrient','gram']];
+  function makePieChart (object) {
+  for(var key in object) {
+    var array = [];
+    if(key === 'Protein' || key === 'Carbohydrate-by-difference'|| key === 'Total-lipid-fat-' ||key === 'Fiber-total-dietary' ||key === 'Sugars-total') {
+    array[0] = key;
+    array[1] = object[key].facts;
+    pieArr.push(array);
+    }
+  }
+  }
+  makePieChart(storageInfo);
+
+  google.charts.load('current', {'packages':['corechart']});
+
+  google.charts.setOnLoadCallback(drawPieChart);
+
+  function drawPieChart () {
+    let data = google.visualization.arrayToDataTable(pieArr);
+
+    let options = {
+      title: "Diet Breakdown",
+      backgroundColor: "white"
+    };
+
+    let chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+    chart.draw(data, options);
+  }
 
 
   function totalNutrients(object) {
     let $total = $('#totalNutrients').children('tbody');
-
-    console.log(storageInfo);
 
     for(let key in object) {
       // console.log(key);
@@ -15,27 +46,27 @@ var storageInfo = JSON.parse(localStorage.allNutrients);
       switch (key) {
         case 'Energy':
         $($cell).html(object[key].facts + object[key].units);
-        console.log(key);
+
         break;
         case 'Protein':
         $($cell).html(object[key].facts + object[key].units);
-        console.log(key);
+
         break;
         case 'Total-lipid-fat-':
         $($cell).html(object[key].facts + object[key].units);
-        console.log(key);
+
         break;
         case 'Carbohydrate-by-difference':
         $($cell).html(object[key].facts + object[key].units);
-        console.log(key);
+
         break;
         case 'Fiber-total-dietary':
         $($cell).html(object[key].facts + object[key].units);
-        console.log(key);
+
         break;
         case 'Sugars-total':
         $($cell).html(object[key].facts + object[key].units);
-        console.log(key);
+
         break;
         default:
 

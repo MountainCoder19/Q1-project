@@ -35,10 +35,12 @@ font-family: 'Yanone Kaffeesatz', sans-serif;*/
  .final {
    color: black;
    padding-right: 3px;
+
  }
  .interim {
    color: gray;
  }
+
  .info {
    font-size: 14px;
    text-align: center;
@@ -91,7 +93,10 @@ text-align: center;
    display:block;
    margin-top: 10px;
  }
-
+ canvas{
+   z-index: -1;
+   display:flex;
+ }
 
 
 .splash {
@@ -130,6 +135,11 @@ margin: 0;
    text-align: center;
    color: white;
  }
+
+#pie-chart {
+  padding-left: 10%;
+  margin-top: 6vh;
+}
 
 @media (max-width:600px) {
 #container, .inner_text_box {
