@@ -166,6 +166,7 @@ h1 {
      height:100%;
  }
 
+
 @media (max-width:600px) {
 #container, .inner_text_box {
   margin:0;
