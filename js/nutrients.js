@@ -1,4 +1,9 @@
+ $(".button-collapse").sideNav();
+// Open
+ $('.collapsible').collapsible('open', 0);
 
+ // Close
+ $('.collapsible').collapsible('close', 0);
 var storageInfo =
 JSON.parse(localStorage.allNutrients);
 
