@@ -117,11 +117,22 @@ margin: 0;
    text-align: center;
  }
 .inner_text_box {
-  margin-left: 33%;
-  margin-right: 30%;
+  margin-left: 27%;
+  /*margin-right: 30%;*/
+}
+.banner>p{
+  margin-top: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.banner>a {
+  margin-top: 2%;
+  width: 15%;
+  border-radius: 10px;
 }
 h1 {
   font-family: 'Permanent Marker', cursive;
+  font-size: 6em;
 }
 
 .get-started-btn {
@@ -137,7 +148,7 @@ h1 {
  #footer-text{
    text-align: center;
    color: white;
-   
+
  }
 
  #pieContainer {
@@ -158,6 +169,5 @@ h1 {
 @media (max-width:600px) {
 #container, .inner_text_box {
   margin:0;
-  .
 }
 }
