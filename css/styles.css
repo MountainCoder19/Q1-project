@@ -111,7 +111,7 @@ margin: 0;
    background-color: #3C5C27;
    border: 1px solid black;
    opacity: 0.7;
-   height: 50vh;
+   height: 60vh;
    margin:25vh 0;
    display:block;
    text-align: center;
@@ -175,9 +175,9 @@ h1 {
 }
 
 body {
-  height: 100vh;
+  height: 80vh;
 }
 
 main {
-  padding-bottom: 20vh;
+  padding-bottom: 15vh;
 }
