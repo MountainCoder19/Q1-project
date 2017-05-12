@@ -65,7 +65,7 @@ if(!('webkitSpeechRecognition' in window)) {
 
                   foodArr = [];
                   if(data.errors) {
-                    console.log('There are no items that match this selection');
+                    alert('There are no items that match this selection');
                   } else {
                     var arr = data.list.item;
                   arr.forEach(function(element) {
@@ -104,7 +104,6 @@ function upgrade() {
 }
 
 function reset () {
-  console.log('poop');
   recognizing = false;
   final_span.innerHTML = '';
 

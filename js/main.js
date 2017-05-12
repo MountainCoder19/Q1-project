@@ -117,7 +117,7 @@ function nutrientReport (array) {
   $(finalReport).append(body);
 
   array.map(function (element,index ){
-    if(element.name === 'Protein' || element.name === 'Carbohydrate-by-difference'|| element.name === 'Total-lipid-fat-' ||element.name === 'Fiber-total-dietary' ||element.name === 'Sugars-total'||element.name === 'Sodium-Na') {
+    if(element.name === 'Energy'|| element.name === 'Protein' || element.name === 'Carbohydrate-by-difference'|| element.name === 'Total-lipid-fat-' ||element.name === 'Fiber-total-dietary' ||element.name === 'Sugars-total'||element.name === 'Sodium-Na') {
       var row = $('<tr>');
       var cell1 = $("<td>");
       var cell2 = $("<td>");
