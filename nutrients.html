@@ -24,20 +24,22 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
+          <li><a href="main.html">Log Food</a></li>
           <li><a href="#">About</a></li>
           <li><a href="nutrients.html">Reports</a></li>
         </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="index.html">Home</a></li>
+        <li><a href="main.html">Log Food</a></li>
         <li><a href="#">About</a></li>
         <li><a href="nutrients.html">Reports</a></li>
       </ul>
       </div>
     </nav>
   </header>
-  <div class="container">
+  <div class="container" style="width:80%">
     <div class="row">
-      <div class="col s12 m6" style="margin-top:10%;">
+      <div class="col s12 m6" style="margin-top:5%;">
         <table class="striped" id="totalNutrients">
           <thead>
             <tr>
@@ -75,7 +77,7 @@
             <tr>
               <td>Sugars</td>
               <td id="Sugars-total"></td>
-              <td>(Men)36 g (Women)25 g</td>
+              <td>(M)36 g (W)25 g</td>
             </tr>
             <tr>
               <td>Sodium</td>
@@ -85,8 +87,8 @@
           </tbody>
         </table>
       </div>
-      <div class = "col s12 m6 pieContainer">
-        <div id ="pie-chart" style = "padding-left: 10%;
+      <div class = "col s12 m6" id= "pieContainer">
+        <div id ="pie-chart" style = "
         margin-top: 2vh;"></div>
       </div>
     </div>  <!---end of row------->

@@ -134,17 +134,26 @@ h1 {
    text-align: center;
    position: relative;
  }
- .footer-text{
+ #footer-text{
    text-align: center;
    color: white;
+   
  }
 
-.carrot {
-  width:auto;
-  height:auto;
+ #pieContainer {
+     position: relative;
+     padding-bottom: 100%;
+     height: 0;
+     overflow:hidden;
+ }
 
-}
-
+ #pie-chart {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width:100%;
+     height:100%;
+ }
 
 @media (max-width:600px) {
 #container, .inner_text_box {

@@ -62,11 +62,12 @@ if(!('webkitSpeechRecognition' in window)) {
                   });//end of ajax call
 
                 $xhr.done(function(data) {
+
                   foodArr = [];
-                  var arr = data.list.item;
-                  if(arr === undefined) {
+                  if(data.errors) {
                     console.log('There are no items that match this selection');
                   } else {
+                    var arr = data.list.item;
                   arr.forEach(function(element) {
                     let food = {
                       name: element.name,

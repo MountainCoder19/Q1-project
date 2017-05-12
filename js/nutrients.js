@@ -1,5 +1,4 @@
 
-
 var storageInfo =
 JSON.parse(localStorage.allNutrients);
 
@@ -26,13 +25,23 @@ var pieArr = [['Nutrient','gram']];
     let options = {
       title: "Diet Breakdown",
       backgroundColor: "white",
-      width: 700,
-      height: 700
+      width: 600,
+      height: 600
     };
 
     let chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
     chart.draw(data, options);
   }
+
+  $(window).on("throttledresize", function (event) {
+    var options = {
+        width: '100%',
+        height: '100%'
+    };
+
+    var data = google.visualization.arrayToDataTable(pieArr);
+    drawChart(data, options);
+});
 
 
   function totalNutrients(object) {
@@ -46,25 +55,25 @@ var pieArr = [['Nutrient','gram']];
 
       switch (key) {
         case 'Energy':
-        $($cell).html(object[key].facts + object[key].units);
+        $($cell).html(object[key].facts + " " + object[key].units);
         break;
         case 'Protein':
-        $($cell).html(object[key].facts + object[key].units);
+        $($cell).html(object[key].facts + " " + object[key].units);
         break;
         case 'Total-lipid-fat-':
-        $($cell).html(object[key].facts + object[key].units);
+        $($cell).html(object[key].facts + " " + object[key].units);
         break;
         case 'Carbohydrate-by-difference':
-        $($cell).html(object[key].facts + object[key].units);
+        $($cell).html(object[key].facts + " " + object[key].units);
         break;
         case 'Fiber-total-dietary':
-        $($cell).html(object[key].facts + object[key].units);
+        $($cell).html(object[key].facts + " " + object[key].units);
         break;
         case 'Sugars-total':
-        $($cell).html(object[key].facts + object[key].units);
+        $($cell).html(object[key].facts + " " + object[key].units);
         break;
         case 'Sodium-Na':
-        $($cell).html(object[key].facts + object[key].units);
+        $($cell).html(object[key].facts + " " + object[key].units);
         break;
         default:
 

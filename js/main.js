@@ -136,14 +136,15 @@ function nutrientReport (array) {
 
 function createFoodList (array) {
   array.map(function (element,index ){
-    var row = $('<p>');
-    var clickText = $('<a class="selection">');
+    // var row = $('<p>');
+    var clickText = $('<a class="selection" style="display:block;">');
     $(clickText).attr('id', `${element.id}`);
 
     $(clickText).text(' Name: ' + element.name);
-    $(row).append(clickText);
-    $(table).append(row);
+    // $(row).append(clickText);
+    $(table).append(clickText);
   });
+  $(table).css('cursor','pointer');
   $('#start_button').hide();
   $('#speechContainer').hide();
 }
