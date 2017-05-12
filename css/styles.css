@@ -172,3 +172,7 @@ h1 {
   margin:0;
 }
 }
+
+body {
+  heigh: 100vh;
+}
