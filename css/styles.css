@@ -116,10 +116,10 @@ margin: 0;
    display:block;
    text-align: center;
  }
-.inner_text_box {
-  margin-left: 28%;
+/*.inner_text_box {
+  margin: 0 auto;
   /*margin-right: 30%;*/
-}
+/*}*/
 .banner>p{
   margin-top: 0;
   font-size: 20px;
