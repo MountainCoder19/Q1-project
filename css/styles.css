@@ -145,6 +145,7 @@ h1 {
    text-align: center;
    position: relative;
  }
+ 
  #footer-text{
    text-align: center;
    color: white;
@@ -174,5 +175,5 @@ h1 {
 }
 
 main {
-  height: 90vh;
+  height: 75vh;
 }
