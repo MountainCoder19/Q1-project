@@ -35,7 +35,7 @@ $($anchor).delegate('a', 'click', function(event){
   } else {
     var $xhr = $.ajax({
 
-      url: 'https://mouthfull.herokuapp.com/ndb/reports/?ndbno='+ndbno+'&type=b&format=json',
+      url: 'https://g-usda.herokuapp.com/ndb/reports/?ndbno='+ndbno+'&type=b&format=json',
       type: 'GET',
       dataType: 'JSON',
     });//end of ajax call
