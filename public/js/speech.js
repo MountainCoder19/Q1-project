@@ -53,7 +53,7 @@ if (!('webkitSpeechRecognition' in window)) {
         toggleStop();
         final_transcript += event.results[i][0].transcript;
         var $xhr = $.ajax({
-          url: 'https://g-usda.herokuapp.com/ndb/search/?format=json&q=' + final_transcript + '&sort=r&max=25&offset=0&ds=Standard+Reference&sr',
+          url: 'https://mouthfull.herokuapp.com/ndb/search/?format=json&q=' + final_transcript + '&sort=r&max=25&offset=0&ds=Standard+Reference&sr',
           type: 'GET',
           dataType: 'JSON',
         }); //end of ajax call
