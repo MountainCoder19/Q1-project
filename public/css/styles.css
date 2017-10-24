@@ -157,6 +157,7 @@ h1 {
      padding-bottom: 100%;
      height: 0;
      overflow:hidden;
+     margin-top: 2vh;
  }
 
  #pie-chart {
@@ -172,12 +173,4 @@ h1 {
 #container, .inner_text_box {
   margin:0;
 }
-}
-
-body {
-  height: 80vh;
-}
-
-main {
-  padding-bottom: 15vh;
 }

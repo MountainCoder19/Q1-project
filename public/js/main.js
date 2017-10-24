@@ -43,11 +43,6 @@ $($anchor).delegate('a', 'click', function(event){
     $xhr.done(function(data) {
         nutrientArr = [];
         let $addBtn = $('<button type = "submit" id = "nextItem" onclick = "refresh(nutrientArr)">Next Item</button>');
-        // let $addBtn = $('<button type="submit">Next Item</button>');
-        // $addBtn.on('click', function (e) {
-        //   console.log($addBtn);
-        //   reset(nutrientArr);
-        // });
         $('#button-area').append($addBtn);
 
         var arr = data.report.food.nutrients;
@@ -75,7 +70,6 @@ $($anchor).delegate('a', 'click', function(event){
       console.log("complete");
     });//end of always
   }//end of else statement
-
 });
 
 var nutrientArr = [];
@@ -113,7 +107,7 @@ function nutrientReport (array) {
   $(headrow).append(headcell1);
   $(headrow).append(headcell2);
   $(head).append(headrow);
-  $(finalReport).append();
+  $(finalReport).append(head);
   $(finalReport).append(body);
 
   array.map(function (element,index ){
@@ -123,7 +117,7 @@ function nutrientReport (array) {
       var cell2 = $("<td>");
 
       $(cell1).text(element.name);
-      $(cell2).text(element.facts);
+      $(cell2).text(element.facts + element.units);
 
       $(row).append(cell1);
       $(row).append(cell2);
@@ -136,12 +130,10 @@ function nutrientReport (array) {
 
 function createFoodList (array) {
   array.map(function (element,index ){
-    // var row = $('<p>');
     var clickText = $('<a class="selection" style="display:block;">');
     $(clickText).attr('id', `${element.id}`);
 
     $(clickText).text(' Name: ' + element.name);
-    // $(row).append(clickText);
     $(table).append(clickText);
   });
   $(table).css('cursor','pointer');

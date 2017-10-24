@@ -1,0 +1,28 @@
+{
+  "name": "mouthfull",
+  "version": "1.0.0",
+  "description": "Working Title",
+  "main": "knexfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmrigali/Q1-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmrigali/Q1-project/issues"
+  },
+  "homepage": "https://github.com/jmrigali/Q1-project#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7"
+  }
+}
